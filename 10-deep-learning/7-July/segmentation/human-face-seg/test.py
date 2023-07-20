@@ -19,7 +19,7 @@ global rgb_codes
 
 def grayscale_to_rgb(mask, rgb_codes):
     h, w = mask.shape[0], mask.shape[1]
-    mask = mask.astype(np.int32)
+    mask = mask.astype(np.int32) # rgb코드에 넣기위해서
     output = []
 
     for i, pixel in enumerate(mask.flatten()):
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     print("")
 
     """ Load the model """
-    model = tf.keras.models.load_model(model_path, compile=False)
+    model = tf.keras.models.load_model(model_path, compile=False) # complie=True 디폴트, False로 설정 시 모델 구성을 수정할 수 있다. 그러면 model.compile()로 다시 컴파일 해야 한다.
 
     """ Prediction & Evaluation """
     SCORE = []
