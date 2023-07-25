@@ -5,8 +5,8 @@ if __name__ == "__main__":
     
     
     """ image path """
-    pic_path = "C:\\data\\lapa\\LaPa\\results\\B.jpg"
-    mask_path = "C:\\data\\lapa\\LaPa\\results\\mask_colored.png"
+    pic_path = "C:\\data\\lapa\\LaPa\\results\\female.jpg"
+    mask_path = "C:\\data\\lapa\\LaPa\\results\\1.png"
 
     """ image size """
     image_h = 512
@@ -33,34 +33,34 @@ if __name__ == "__main__":
     alpha = np.array(alpha).astype('uint8')
     crop_image = cv2.merge([b,g,r, alpha])
     
-    # 검은배경 만들기
-    for i in range(len(crop_image)):
-        for j in range(len(crop_image[i])):
-            if(crop_image[i][j][3] == 0).all():
-                crop_image[i][j] = [0,0,0,255]
+    # # 검은배경 만들기
+    # for i in range(len(crop_image)):
+    #     for j in range(len(crop_image[i])):
+    #         if(crop_image[i][j][3] == 0).all():
+    #             crop_image[i][j] = [0,0,0,255]
           
-    # 턱 하단과 모델마스크 선까지의 거리 계산
-    lip_arr = []
-    for i in range(len(crop_image)):
-        for j in range(len(crop_image[i])):   
-            if(crop_image[i][j][0] == 177 and crop_image[i][j+2][0] == 177 and crop_image[i][j-2][0] == 177).all():
-                lip_arr.append(hori_line-i)
+    # # 턱 하단과 모델마스크 선까지의 거리 계산
+    # lip_arr = []
+    # for i in range(len(crop_image)):
+    #     for j in range(len(crop_image[i])):   
+    #         if(crop_image[i][j][0] == 177 and crop_image[i][j+2][0] == 177 and crop_image[i][j-2][0] == 177).all():
+    #             lip_arr.append(hori_line-i)
     
-    # 얼굴 내리기        
-    dst = min(lip_arr)
-    print(lip_arr)
-    mov_img = np.zeros((512,512,4), np.uint8)
+    # # 얼굴 내리기        
+    # dst = min(lip_arr)
+    # print(lip_arr)
+    # mov_img = np.zeros((512,512,4), np.uint8)
     
-    for i in range(len(crop_image)):
-        for j in range(len(crop_image[i])): 
-            try:
-                mov_img[i+dst][j] = crop_image[i][j]
-                if(mov_img[i][j][3] == 0).all():
-                    mov_img[i][j] = [0,0,0,255]
-            except:
-                pass
+    # for i in range(len(crop_image)):
+    #     for j in range(len(crop_image[i])): 
+    #         try:
+    #             mov_img[i+dst][j] = crop_image[i][j]
+    #             if(mov_img[i][j][3] == 0).all():
+    #                 mov_img[i][j] = [0,0,0,255]
+    #         except:
+    #             pass
 
     # cv2.imshow("mov_img",mov_img)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
-    cv2.imwrite('C:\\data\\lapa\\LaPa\\results\\save3.png', mov_img)
+    cv2.imwrite('C:\\data\\lapa\\LaPa\\results\\save3.png', crop_image)

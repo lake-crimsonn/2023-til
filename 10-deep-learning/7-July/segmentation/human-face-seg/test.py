@@ -44,9 +44,6 @@ def save_results(image_x, mask, pred, save_image_path):
     cv2.imwrite(save_image_path, pred)
 
 if __name__ == "__main__":
-    """ Seeding """
-    np.random.seed(42)
-    tf.random.set_seed(42)
 
     """ Directory for storing files """
     create_dir("C:\data\lapa\LaPa\\results")

@@ -33,7 +33,6 @@ def save_results(image_x, pred, save_image_path):
 
     pred = np.expand_dims(pred, axis=-1)
     pred = grayscale_to_rgb(pred, rgb_codes)
-    # pred = background_to_white(pred)
     
     line = np.ones((image_x.shape[0], 10, 3)) * 255
 
@@ -53,13 +52,13 @@ if __name__ == "__main__":
     
     """ Paths """
     model_path = os.path.join("C:\\data\\lapa\\LaPa\\files","model.h5")
-    pic_path = "C:\\data\\lapa\\LaPa\\results\\B.jpg"
+    pic_path = "C:\\data\\lapa\\LaPa\\results\\female.jpg"
     
     """ RGB Code and Classes """
     rgb_codes = [
-        [0, 0, 0], [177, 206, 251], [255, 255, 255], [255, 255, 255],
-        [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 102, 255],
-        [255, 255, 255], [255, 204, 255], [255, 255, 255]
+        [0, 0, 0], [255, 255, 255], [255, 255, 255], [255, 255, 255],
+        [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255],
+        [255, 255, 255], [255, 255, 255], [255, 255, 255]
     ]
 
     classes = [

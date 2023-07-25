@@ -47,7 +47,7 @@ def read_image_mask(x, y):
 
 def preprocess(x, y):
     def f(x, y):
-        x = x.decode()
+        x = x.decode() # 바이트에서 스트링으로 디코딩
         y = y.decode()
         return read_image_mask(x, y)
 
