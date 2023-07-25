@@ -28,10 +28,10 @@ if __name__ == "__main__":
 
     # _,alpha = cv2.threshold(mask,0,255,cv2.THRESH_BINARY) # 투명
     
-    b, g, r = cv2.split(image)
-    alpha = mask.mean(axis=-1, keepdims=True)
-    alpha = np.array(alpha).astype('uint8')
-    crop_image = cv2.merge([b,g,r, alpha])
+    # b, g, r = cv2.split(image)
+    # alpha = mask.mean(axis=-1, keepdims=True)
+    # alpha = np.array(alpha).astype('uint8')
+    # crop_image = cv2.merge([b,g,r, alpha])
     
     # # 검은배경 만들기
     # for i in range(len(crop_image)):
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     #         if(crop_image[i][j][3] == 0).all():
     #             crop_image[i][j] = [0,0,0,255]
           
-    # # 턱 하단과 모델마스크 선까지의 거리 계산
+    # 턱 하단과 모델마스크 선까지의 거리 계산
     # lip_arr = []
     # for i in range(len(crop_image)):
     #     for j in range(len(crop_image[i])):   

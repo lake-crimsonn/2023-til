@@ -49,14 +49,15 @@ if __name__ == "__main__":
     image_h = 512
     image_w = 512
     num_classes = 11
+    filename = "female"
     
     """ Paths """
     model_path = os.path.join("C:\\data\\lapa\\LaPa\\files","model.h5")
-    pic_path = "C:\\data\\lapa\\LaPa\\results\\female.jpg"
+    pic_path = f"C:\\data\\lapa\\LaPa\\results\\{filename}.jpg"
     
     """ RGB Code and Classes """
     rgb_codes = [
-        [0, 0, 0], [255, 255, 255], [255, 255, 255], [255, 255, 255],
+        [0, 0, 0], [177, 255, 255], [255, 255, 255], [255, 255, 255],
         [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255],
         [255, 255, 255], [255, 255, 255], [255, 255, 255]
     ]
@@ -86,8 +87,8 @@ if __name__ == "__main__":
     # rgb_mask = grayscale_to_rgb(pred, rgb_codes)
     
     """ Save the results """
-    cnt+=1
-    save_image_path = f"C:\\data\\lapa\\LaPa\\results\\{cnt}.png"
+    filename = "mask_"+filename
+    save_image_path = f"C:\\data\\lapa\\LaPa\\results\\{filename}.png"
     # print(save_image_path)
     save_results(image_x, pred, save_image_path)
     
