@@ -50,12 +50,12 @@ if __name__ == "__main__":
     """ Hyperparameters """
     image_h = 512
     image_w = 512
-    num_classes = 2
-    filename = "B"
+    num_classes = 11
+    filename = "suit11"
 
     """ Paths """
     model_path = os.path.join(
-        "C:\data\celebaMask\dataset\\neck\\result", "model_neck.h5")
+        "C:\data\lapa\LaPa\\files", "model.h5")
     pic_path = f"C:\data\lapa\LaPa\\results\\{filename}.jpg"
 
     """ RGB Code and Classes """

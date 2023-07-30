@@ -90,8 +90,8 @@ if __name__ == "__main__":
     num_epochs = 100
 
     """ Paths """
-    dataset_path = "C:\data\lapa\LaPa"
-    model_path = os.path.join("files", "model.h5")
+    dataset_path = "C:\data\celebaMask\dataset\\neck2"
+    model_path = os.path.join("files", "model_neck2.h5")
     csv_path = os.path.join("files", "data.csv")
 
     """ RGB Code and Classes """
