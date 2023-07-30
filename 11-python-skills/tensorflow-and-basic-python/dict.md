@@ -11,3 +11,13 @@ a.values()
 # dict_values(['pey', '010-9999-1234', '1118'])
 
 ```
+
+```python
+a = {}
+a['a1'] = 'a value'
+# if not a.keys() == 'a1':
+#     print('empty')
+if 'a2' not in a.keys():
+    a['b1'] = 'b value'
+a
+```
