@@ -64,3 +64,14 @@
 - gem install tzinfo-data
 
 ---
+
+> ### 이전 다음 버튼 삭제
+
+- post_pagination.html 전체 주석
+
+> ### 헤더 이미지 변경
+
+- index.html overlay img
+- shift ctrl f -> overlay -> \_page.scss
+
+---
