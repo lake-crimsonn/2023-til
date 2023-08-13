@@ -50,7 +50,7 @@
 
   ```
   - npm install --global cross-env
-  - cross-env JEKYLL_ENV=development jekyll serve
+  - cross-env JEKYLL_ENV=production jekyll serve
   ```
 
   https://mmistakes.github.io/minimal-mistakes/docs/layouts/
